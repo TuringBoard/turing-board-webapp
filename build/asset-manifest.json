@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b8347ea7.chunk.css",
+    "main.js": "/static/js/main.bdf49afb.chunk.js",
+    "main.js.map": "/static/js/main.bdf49afb.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.71ecc851.js",
+    "runtime-main.js.map": "/static/js/runtime-main.71ecc851.js.map",
+    "static/js/2.7d307d98.chunk.js": "/static/js/2.7d307d98.chunk.js",
+    "static/js/2.7d307d98.chunk.js.map": "/static/js/2.7d307d98.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.b8347ea7.chunk.css.map": "/static/css/main.b8347ea7.chunk.css.map",
+    "static/js/2.7d307d98.chunk.js.LICENSE.txt": "/static/js/2.7d307d98.chunk.js.LICENSE.txt",
+    "static/media/Asset 2.c192d11c.png": "/static/media/Asset 2.c192d11c.png",
+    "static/media/Credentials.module.css": "/static/media/AvenirLTStd-Book.813557df.otf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.71ecc851.js",
+    "static/js/2.7d307d98.chunk.js",
+    "static/css/main.b8347ea7.chunk.css",
+    "static/js/main.bdf49afb.chunk.js"
+  ]
+}

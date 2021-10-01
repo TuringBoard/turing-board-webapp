@@ -1,0 +1,107 @@
+$track-w: 17.5em;
+$track-h: 10em;
+$thumb-d: 1.5em;
+$filll-c: #95a;
+$track-c: white;
+@mixin track($fill: 0) {
+    box-sizing: border-box;
+    border: none;
+    width: $track-w;
+    height: $track-h;
+    background: white;
+    border-radius: 10px;
+
+    @if $fill==1 {
+        .js & {
+            background: linear-gradient($filll-c, $filll-c) 0/ var(--sx) 100% no-repeat $track-c
+        }
+    }
+}
+
+@mixin fill() {
+    height: $track-h;
+    background: $filll-c
+}
+
+@mixin thumb() {
+    box-sizing: border-box;
+    border: none;
+    width: 25px;
+    height: $track-h;
+    background: #f90;
+    margin-top:0px;
+    border-radius: 5px;
+}
+
+.wrap {
+    float: left;
+    position: relative;
+    margin: 0 .5em .5em;
+    padding: .5em;
+    height: $track-w;
+    width: $thumb-d;
+}
+
+input[type='range'] {
+    opacity: 0.75;
+    position: relative;
+    left: 50%;
+    &,
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+    }
+    margin: 0 auto;
+    padding: 0;
+    width: $track-w;
+    height: $track-h;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    background: transparent;
+    font: 1em/1 arial,
+    sans-serif;
+    
+
+    &::-webkit-slider-runnable-track {
+        @include track(1)
+    }
+
+    &::-moz-range-track {
+        @include track
+    }
+    &::-webkit-range-track {
+        @include track
+    }
+
+    &::-ms-track {
+        @include track
+    }
+
+    &::-ms-fill-lower {
+        @include fill
+    }
+
+    &::-webkit-slider-thumb {
+        margin-top: .5*($track-h - $thumb-d);
+        @include thumb
+    }
+
+    &::-moz-range-thumb {
+        @include thumb
+    }
+
+    &::-webkit-range-thumb {
+        @include thumb
+    }
+
+    &::-ms-thumb {
+        margin-top: 0;
+        @include thumb
+    }
+
+    &::-ms-tooltip {
+        display: none
+    }
+}
+
+input[type='range']::-webkit-range-progress {
+    background-color: red;
+}
