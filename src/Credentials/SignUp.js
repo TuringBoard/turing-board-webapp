@@ -18,12 +18,16 @@ const SignUp = () => {
     const onSubmitHandler = (e) => {
         e.preventDefault();
         setSubmitted(true);
-        if (passwordRef.current.value === confirmPasswordRef.current.value) {
+        if (passwordRef.current.value === confirmPasswordRef.current.value && (firstNameRef.current.value !== "" && lastNameRef.current.value !== "")) {
             setErrorClass(classes.inputBox);
             signup(emailRef.current.value, confirmPasswordRef.current.value, firstNameRef.current.value, lastNameRef.current.value);
-            history.push("/throttle");
+            history.push("/dashboard");
         } else {
-            setErrorClass(classes.inputBoxError);
+            if (firstNameRef.current.value !== null && lastNameRef.current.value !== null) {
+                alert("First and Last names cannot be empty.")
+            } else {
+                setErrorClass(classes.inputBoxError);
+            }
         }
     }
 
@@ -39,7 +43,7 @@ const SignUp = () => {
                 <div className={classes.form}>
                     <form>
                         <input className={classes.inputBox} type="text" placeholder="First Name" ref={firstNameRef} />
-                        <input className={classes.inputBox} type="text" placeholder="Second Name" ref={lastNameRef} />
+                        <input className={classes.inputBox} type="text" placeholder="Last Name" ref={lastNameRef} />
                         <div className={classes.gap}></div>
                         <input className={classes.inputBox} type="email" placeholder="E-mail Address" ref={emailRef} />
                         <div className={classes.gap}></div>

@@ -1,17 +1,12 @@
-import { Fragment, useEffect, useState } from 'react';
+import { Fragment, useState } from 'react';
 import classes from './Throttle.module.css';
 import GaugeChart from 'react-gauge-chart';
 import './Throttle.scss';
-import { getFirestore, collection, query, where, getDocs } from 'firebase/firestore';
-import { useAuth } from '../store/auth-context';
-
-const db = getFirestore();
+import { NavLink } from 'react-router-dom';
 
 const Throttle = () => {
     const [throttle, setThrottle] = useState(0);
-    const [firstName, setFirstName] = useState("");
-    const colors = Array(30).fill("#FFFFFF")
-    const { uid } = useAuth();
+    const colors = Array(30).fill("#FFFFFF");
     const onThrottleHandler = (event) => {
         let value = event.target.value;
         if (value < 0) {
@@ -23,17 +18,6 @@ const Throttle = () => {
     const resetSpeed = () => {
         setThrottle(0)
     }
-
-    useEffect(() => {
-        async function getData() {
-            const q = query(collection(db, "users"), where("id", "==", uid));
-            const querySnapshot = await getDocs(q);
-            querySnapshot.forEach((doc) => {
-                setFirstName(doc.data().firstName)
-            });
-        }
-        getData();
-    }, [uid]);
 
     return (
         <Fragment>
@@ -69,9 +53,11 @@ const Throttle = () => {
                         />
                     </div>
                 </div>
-                <div className={classes.welcome}>
-                    <p>Welcome, {firstName}!</p>
-                </div>
+                <NavLink to="/dashboard" className={classes.navlink}>
+                    <div className={classes.goback}>
+                        Dashboard
+                    </div>
+                </NavLink>
             </div>
         </Fragment >
     );

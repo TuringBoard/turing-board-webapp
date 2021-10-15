@@ -6,6 +6,7 @@ import LandingBg from './LandingBg';
 import SignUp from '../Credentials/SignUp';
 
 const LandingPage = () => {
+
     const onCreateUserHandler = () => {
         setContent(<SignUp />)
     }

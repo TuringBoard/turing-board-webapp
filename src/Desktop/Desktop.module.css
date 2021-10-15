@@ -1,0 +1,39 @@
+@font-face {
+    font-family: Avenir-Book;
+    src: url('../assets/fonts/AvenirLTStd-Book.otf');
+}
+
+
+.logo {
+    width: 10%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 50px;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.034),
+        0 1px 10px rgba(0, 0, 0, 0.048),
+        0 1px 10px rgba(0, 0, 0, 0.06),
+        0 1px 10px rgba(0, 0, 0, 0.072),
+        0 1px 10px rgba(0, 0, 0, 0.086),
+        0 1px 10px rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+.mainText{
+    margin: 0 auto;
+    width: 50%;
+    color: white;
+    font-family: Avenir-Book;
+    font-size: 1.5em;
+}
+
+.mainText h1 {
+    text-align: center;
+}
+
+.warning{
+    border: 2px solid rgb(218, 131, 131);
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(256,256,256,0.3);
+}
